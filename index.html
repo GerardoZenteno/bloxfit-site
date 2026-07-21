@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="es" class="dark scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bloxfit | Elevate Your Roblox Style with AI</title>
+    <!-- Tailwind CSS v3 CDN with Plugins -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-deep": "#0B0F1A",
+                        "surface-container": "#171f33",
+                        "surface-container-low": "#131b2e",
+                        "surface-container-lowest": "#060e20",
+                        "surface-container-high": "#222a3d",
+                        "surface-container-highest": "#2d3449",
+                        "surface-elevated": "#1E293B",
+                        "primary": "#abc7ff",
+                        "primary-blue": "#488ffb",
+                        "accent-gold": "#FACC15",
+                        "tertiary": "#4edea3",
+                        "navy-border": "#2C2D3F",
+                        "on-surface": "#dae2fd",
+                        "on-surface-variant": "#c1c6d5",
+                        "outline": "#8b919f",
+                    },
+                    fontFamily: {
+                        sans: ['Montserrat', 'Roboto', 'sans-serif'],
+                        display: ['Montserrat', 'sans-serif'],
+                        body: ['Roboto', 'sans-serif'],
+                    }
+                },
+            },
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Google Material Symbols -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <style>
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        .animate-float {
+            animation: float 4s ease-in-out infinite;
+        }
+        .glass-panel {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(44, 45, 63, 0.6);
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #abc7ff 0%, #488ffb 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .glow-button {
+            box-shadow: 0 0 20px rgba(72, 143, 251, 0.4);
+        }
+        .phone-frame {
+            border: 8px solid #2d3449;
+            border-radius: 40px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+            overflow: hidden;
+            background: #0B0F1A;
+        }
+    </style>
+</head>
+<body class="bg-surface-deep text-on-surface font-body selection:bg-primary selection:text-[#002f65] antialiased">
+
+    <!-- Top Navigation Bar -->
+    <nav class="sticky top-0 z-50 bg-surface-deep/85 backdrop-blur-md border-b border-navy-border shadow-sm">
+        <div class="max-w-7xl mx-auto px-6 h-16 flex justify-between items-center">
+            <!-- Brand Logo -->
+            <a href="#" class="font-display text-2xl font-bold tracking-tight text-primary hover:opacity-90 transition-opacity">
+                Bloxfit
+            </a>
+
+            <!-- Desktop Nav Menu -->
+            <div class="hidden md:flex items-center gap-8">
+                <a href="#features" class="text-sm font-medium text-on-surface-variant hover:text-primary transition-colors">Features</a>
+                <a href="#chests" class="text-sm font-medium text-on-surface-variant hover:text-primary transition-colors">Chests</a>
+                <a href="#giveaways" class="text-sm font-medium text-on-surface-variant hover:text-primary transition-colors">Giveaways</a>
+                
+                <!-- Language Selector -->
+                <button id="lang-btn" class="flex items-center gap-1.5 text-xs font-medium text-on-surface-variant bg-surface-container rounded-full px-3 py-1.5 border border-navy-border hover:border-primary/50 transition-colors">
+                    <span class="material-symbols-outlined text-base">language</span>
+                    <span id="lang-text">English</span>
+                    <span class="material-symbols-outlined text-base">expand_more</span>
+                </button>
+
+                <!-- Download CTA -->
+                <a href="#download" class="bg-primary-blue text-white font-semibold text-sm px-5 py-2 rounded-lg hover:bg-blue-600 transition-all shadow-md shadow-primary-blue/20">
+                    Download
+                </a>
+            </div>
+
+            <!-- Mobile Controls -->
+            <div class="flex md:hidden items-center gap-3">
+                <button id="lang-btn-mobile" class="flex items-center gap-1 text-xs font-medium text-on-surface-variant bg-surface-container rounded-full px-3 py-1 border border-navy-border">
+                    <span class="material-symbols-outlined text-base">language</span>
+                    <span>English</span>
+                    <span class="material-symbols-outlined text-base">expand_more</span>
+                </button>
+                <button id="mobile-menu-btn" class="material-symbols-outlined text-primary text-3xl p-1 focus:outline-none">
+                    menu
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Dropdown Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-surface-container border-b border-navy-border px-6 py-4 space-y-3">
+            <a href="#features" class="block text-sm font-medium text-on-surface-variant hover:text-primary">Features</a>
+            <a href="#chests" class="block text-sm font-medium text-on-surface-variant hover:text-primary">Chests</a>
+            <a href="#giveaways" class="block text-sm font-medium text-on-surface-variant hover:text-primary">Giveaways</a>
+            <a href="#download" class="block text-center bg-primary-blue text-white font-semibold text-sm px-4 py-2.5 rounded-lg">Download App</a>
+        </div>
+    </nav>
+
+    <!-- Main Content Shell -->
+    <main class="relative overflow-hidden">
+
+        <!-- ========================================== -->
+        <!-- HERO SECTION - DESKTOP VIEW (lg:grid) -->
+        <!-- ========================================== -->
+        <section class="hidden lg:grid max-w-7xl mx-auto px-6 py-16 grid-cols-2 gap-12 items-center min-h-[calc(100vh-4rem)]">
+            <div class="space-y-6">
+                <h1 class="font-display text-5xl xl:text-6xl font-extrabold tracking-tight text-white leading-[1.15]">
+                    Elevate your <span class="gradient-text">Roblox style</span> with AI
+                </h1>
+                <p class="text-on-surface-variant text-lg leading-relaxed max-w-xl">
+                    Scan any Roblox outfit instantly. Detect accessories, prices, and creators in seconds while earning BloxCoins to redeem for free Robux.
+                </p>
+                <div class="pt-4 flex items-center gap-4">
+                    <a href="#download" class="inline-block transition-transform hover:scale-105 active:scale-95">
+                        <img src="./google-play-badge.png" alt="Get it on Google Play" class="h-14 w-auto shadow-xl rounded-lg">
+                    </a>
+                </div>
+            </div>
+            <div class="relative flex justify-center items-center">
+                <div class="absolute w-[320px] h-[320px] bg-primary-blue/20 blur-[100px] rounded-full -z-10"></div>
+                <div class="phone-frame w-[300px] max-w-full animate-float">
+                    <img src="./mockup_outfit_upload.png" alt="Bloxfit AI Outfit Detection Screen" class="w-full h-auto object-cover">
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- HERO SECTION - MOBILE VIEW (lg:hidden) -->
+        <!-- ========================================== -->
+        <section class="lg:hidden pt-10 pb-16 px-6 text-center flex flex-col items-center relative">
+            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[120%] aspect-square bg-primary-blue/10 rounded-full blur-[90px] -z-10"></div>
+            <span class="inline-block py-1.5 px-4 rounded-full bg-primary/10 border border-primary/20 text-primary font-bold text-xs tracking-widest uppercase mb-4">
+                ROBLOX EVOLUTION
+            </span>
+            <h1 class="font-display text-3xl sm:text-4xl font-extrabold text-white leading-tight mb-4">
+                Elevate your <span class="gradient-text">Roblox style</span> with AI
+            </h1>
+            <p class="text-on-surface-variant text-base leading-relaxed max-w-md mx-auto mb-6">
+                The ultimate companion app to discover, match, and win premium items. Transform your digital identity today.
+            </p>
+            <a href="#download" class="inline-block transition-transform active:scale-95 mb-8">
+                <img src="./google-play-badge.png" alt="Get it on Google Play" class="h-14 w-auto mx-auto shadow-xl">
+            </a>
+            <div class="relative w-full max-w-[280px] mx-auto animate-float">
+                <div class="phone-frame w-full">
+                    <img src="./mockup_outfit_upload.png" alt="Bloxfit App Screen" class="w-full h-auto object-cover">
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- STATS BANNER - DESKTOP VIEW (lg:block) -->
+        <!-- ========================================== -->
+        <section class="hidden lg:block py-12 bg-surface-container-lowest border-y border-navy-border">
+            <div class="max-w-7xl mx-auto px-6 text-center space-y-8">
+                <h2 class="font-display text-3xl font-bold text-white">Join +300,000 players</h2>
+                <div class="grid grid-cols-4 gap-8">
+                    <div class="p-6 rounded-2xl glass-panel">
+                        <div class="font-display text-4xl font-extrabold text-primary">99M+</div>
+                        <div class="text-xs font-semibold uppercase tracking-wider text-on-surface-variant mt-2">ITEMS SCANNED</div>
+                    </div>
+                    <div class="p-6 rounded-2xl glass-panel">
+                        <div class="font-display text-4xl font-extrabold text-accent-gold">500+</div>
+                        <div class="text-xs font-semibold uppercase tracking-wider text-on-surface-variant mt-2">5-STAR REVIEWS</div>
+                    </div>
+                    <div class="p-6 rounded-2xl glass-panel">
+                        <div class="font-display text-4xl font-extrabold text-tertiary">12M+</div>
+                        <div class="text-xs font-semibold uppercase tracking-wider text-on-surface-variant mt-2">COINS EARNED</div>
+                    </div>
+                    <div class="p-6 rounded-2xl glass-panel">
+                        <div class="font-display text-4xl font-extrabold text-primary">24/7</div>
+                        <div class="text-xs font-semibold uppercase tracking-wider text-on-surface-variant mt-2">ACTIVE SUPPORT</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- STATS GRID - MOBILE VIEW (lg:hidden) -->
+        <!-- ========================================== -->
+        <section class="lg:hidden py-8 px-6 bg-surface-container-lowest border-y border-navy-border">
+            <div class="grid grid-cols-2 gap-4 max-w-sm mx-auto">
+                <div class="text-center p-4 rounded-xl glass-panel">
+                    <div class="font-display text-2xl font-bold text-primary">300k</div>
+                    <div class="text-[10px] font-semibold text-on-surface-variant uppercase tracking-wider">PLAYERS</div>
+                </div>
+                <div class="text-center p-4 rounded-xl glass-panel">
+                    <div class="font-display text-2xl font-bold text-accent-gold">99M+</div>
+                    <div class="text-[10px] font-semibold text-on-surface-variant uppercase tracking-wider">ITEMS</div>
+                </div>
+                <div class="text-center p-4 rounded-xl glass-panel">
+                    <div class="font-display text-2xl font-bold text-tertiary">99%</div>
+                    <div class="text-[10px] font-semibold text-on-surface-variant uppercase tracking-wider">MATCH AI</div>
+                </div>
+                <div class="text-center p-4 rounded-xl glass-panel">
+                    <div class="font-display text-2xl font-bold text-primary">5★</div>
+                    <div class="text-[10px] font-semibold text-on-surface-variant uppercase tracking-wider">RATING</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- FEATURE 1: AI OUTFIT DETECTION -->
+        <!-- ========================================== -->
+        <section id="features" class="py-20 px-6 max-w-7xl mx-auto">
+            <!-- Desktop Grid -->
+            <div class="hidden lg:grid grid-cols-2 gap-16 items-center">
+                <div class="flex justify-center">
+                    <div class="phone-frame w-[320px]">
+                        <img src="./mockup_detected_items.png" alt="AI Detected Items Screen" class="w-full h-auto object-cover">
+                    </div>
+                </div>
+                <div class="space-y-6">
+                    <span class="text-xs font-bold uppercase tracking-widest text-primary">VISUAL SEARCH</span>
+                    <h2 class="font-display text-4xl font-bold text-white">AI Outfit Detection</h2>
+                    <p class="text-on-surface-variant text-base leading-relaxed">
+                        Our AI engine analyzes every pixel to find exact matches in the Roblox catalog. Upload a screenshot and let the technology handle the rest.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4 pt-4">
+                        <div class="p-5 rounded-xl glass-panel space-y-2">
+                            <span class="material-symbols-outlined text-primary text-3xl">photo_camera</span>
+                            <h3 class="font-display text-lg font-semibold text-white">Instant Scan</h3>
+                            <p class="text-xs text-on-surface-variant leading-normal">Just upload a screenshot of any avatar you find.</p>
+                        </div>
+                        <div class="p-5 rounded-xl glass-panel space-y-2">
+                            <span class="material-symbols-outlined text-primary text-3xl">search</span>
+                            <h3 class="font-display text-lg font-semibold text-white">Item Matching</h3>
+                            <p class="text-xs text-on-surface-variant leading-normal">Get IDs, names, and current prices in seconds.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile Layout -->
+            <div class="lg:hidden max-w-md mx-auto text-center space-y-8">
+                <div class="space-y-3">
+                    <div class="flex justify-center">
+                        <span class="material-symbols-outlined text-tertiary text-4xl" style="font-variation-settings: 'FILL' 1;">qr_code_scanner</span>
+                    </div>
+                    <h2 class="font-display text-2xl font-bold text-white">AI Outfit Detection</h2>
+                    <p class="text-on-surface-variant text-sm leading-relaxed px-2">
+                        Instantly identify any Roblox accessory. Our neural engine matches items with surgical precision so you can recreate any look.
+                    </p>
+                </div>
+                <div class="relative w-full max-w-[280px] mx-auto">
+                    <div class="phone-frame w-full">
+                        <img src="./mockup_detected_items.png" alt="AI Detected Items Mobile" class="w-full h-auto object-cover">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- FEATURE 2: EXCLUSIVE CHESTS & REWARDS -->
+        <!-- ========================================== -->
+        <section id="chests" class="py-20 px-6 bg-surface-container-low/60 border-y border-navy-border">
+            <div class="max-w-7xl mx-auto">
+                <!-- Desktop Grid -->
+                <div class="hidden lg:grid grid-cols-2 gap-16 items-center">
+                    <div class="flex justify-center">
+                        <div class="phone-frame w-[320px]">
+                            <img src="./mockup_chests.png" alt="Chests & Daily Rewards Screen" class="w-full h-auto object-cover">
+                        </div>
+                    </div>
+                    <div class="space-y-6">
+                        <span class="text-xs font-bold uppercase tracking-widest text-accent-gold">DAILY BLOXCOINS</span>
+                        <h2 class="font-display text-4xl font-bold text-white">Exclusive Chests & Rewards</h2>
+                        <p class="text-on-surface-variant text-base leading-relaxed">
+                            Keep your streak active to unlock higher-level chests. From the Daily Free Chest to the legendary Glitch Chest, there's always something to earn.
+                        </p>
+                        <div class="grid grid-cols-2 gap-4 pt-4">
+                            <div class="p-5 rounded-xl glass-panel space-y-2">
+                                <span class="material-symbols-outlined text-accent-gold text-3xl">schedule</span>
+                                <h3 class="font-display text-lg font-semibold text-white">24h Chest</h3>
+                                <p class="text-xs text-on-surface-variant leading-normal">Free every single day. Guaranteed rewards up to 8 Coins.</p>
+                            </div>
+                            <div class="p-5 rounded-xl glass-panel space-y-2">
+                                <span class="material-symbols-outlined text-accent-gold text-3xl">auto_awesome</span>
+                                <h3 class="font-display text-lg font-semibold text-white">Glitch Chest</h3>
+                                <p class="text-xs text-on-surface-variant leading-normal">Multiplied rewards during special community events.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mobile Layout -->
+                <div class="lg:hidden max-w-md mx-auto text-center space-y-8">
+                    <div class="space-y-3">
+                        <div class="flex justify-center">
+                            <span class="material-symbols-outlined text-accent-gold text-4xl" style="font-variation-settings: 'FILL' 1;">inventory_2</span>
+                        </div>
+                        <h2 class="font-display text-2xl font-bold text-white">Exclusive Chests & Rewards</h2>
+                        <p class="text-on-surface-variant text-sm leading-relaxed px-2">
+                            Complete daily challenges to earn keys. Unlock legendary chests containing exclusive skins, emotes, and rare digital assets.
+                        </p>
+                    </div>
+                    <div class="relative w-full max-w-[280px] mx-auto">
+                        <div class="phone-frame w-full">
+                            <img src="./mockup_chests.png" alt="Chests & Daily Rewards Mobile" class="w-full h-auto object-cover">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- FEATURE 3: WIN GOOGLE PLAY GIFT CARDS -->
+        <!-- ========================================== -->
+        <section id="giveaways" class="py-20 px-6 max-w-7xl mx-auto">
+            <!-- Desktop Grid -->
+            <div class="hidden lg:grid grid-cols-2 gap-16 items-center">
+                <div class="flex justify-center">
+                    <div class="phone-frame w-[320px]">
+                        <img src="./mockup_giveaways.png" alt="Giveaways & Gift Cards Screen" class="w-full h-auto object-cover">
+                    </div>
+                </div>
+                <div class="space-y-6">
+                    <span class="text-xs font-bold uppercase tracking-widest text-primary">WEEKLY EVENTS</span>
+                    <h2 class="font-display text-4xl font-bold text-white">Win Google Play Gift Cards</h2>
+                    <p class="text-on-surface-variant text-base leading-relaxed">
+                        Exchange your earned BloxCoins for participation tickets. The more tickets you have, the higher your chances of winning Robux through official gift cards.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4 pt-4">
+                        <div class="p-5 rounded-xl glass-panel space-y-2">
+                            <span class="material-symbols-outlined text-primary text-3xl">confirmation_number</span>
+                            <h3 class="font-display text-lg font-semibold text-white">Ticket Entry</h3>
+                            <p class="text-xs text-on-surface-variant leading-normal">Low cost entries. High value rewards for active users.</p>
+                        </div>
+                        <div class="p-5 rounded-xl glass-panel space-y-2">
+                            <span class="material-symbols-outlined text-primary text-3xl">emoji_events</span>
+                            <h3 class="font-display text-lg font-semibold text-white">Verified Winners</h3>
+                            <p class="text-xs text-on-surface-variant leading-normal">Transparent results and instant code delivery.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile Layout -->
+            <div class="lg:hidden max-w-md mx-auto text-center space-y-8">
+                <div class="space-y-3">
+                    <div class="flex justify-center">
+                        <span class="material-symbols-outlined text-primary text-4xl" style="font-variation-settings: 'FILL' 1;">redeem</span>
+                    </div>
+                    <h2 class="font-display text-2xl font-bold text-white">Win Google Play Cards</h2>
+                    <p class="text-on-surface-variant text-sm leading-relaxed px-2">
+                        Join our massive weekly giveaways. Level up your gaming library without spending a dime. Your next win is just a tap away.
+                    </p>
+                </div>
+                <div class="relative w-full max-w-[280px] mx-auto">
+                    <div class="phone-frame w-full">
+                        <img src="./mockup_giveaways.png" alt="Giveaways Mobile" class="w-full h-auto object-cover">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- CALL TO ACTION SECTION -->
+        <!-- ========================================== -->
+        <section id="download" class="py-16 px-6 max-w-4xl mx-auto">
+            <div class="glass-panel p-8 sm:p-12 rounded-3xl text-center space-y-6 relative overflow-hidden border border-navy-border shadow-2xl">
+                <div class="absolute -top-24 -left-24 w-48 h-48 bg-primary-blue/20 blur-3xl rounded-full"></div>
+                <h2 class="font-display text-2xl sm:text-4xl font-bold text-white leading-tight">
+                    Ready to transform your avatar?
+                </h2>
+                <p class="text-on-surface-variant text-sm sm:text-base max-w-md mx-auto">
+                    Join over 300,000 players already defining the future of Roblox style.
+                </p>
+                <div class="pt-2 flex justify-center">
+                    <a href="#download" class="inline-block bg-primary-blue text-white font-bold text-base px-8 py-3.5 rounded-xl glow-button hover:bg-blue-600 transition-all transform active:scale-95 shadow-lg shadow-primary-blue/30">
+                        Get Started Free
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-surface-container-lowest border-t border-navy-border py-12 mt-12">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="space-y-2 text-center md:text-left">
+                <div class="font-display text-2xl font-bold text-primary">Bloxfit</div>
+                <p class="text-xs text-on-surface-variant">
+                    © 2024 Bloxfit. Not affiliated with Roblox Corporation.
+                </p>
+            </div>
+            
+            <div class="flex flex-wrap justify-center gap-6 text-xs text-on-surface-variant">
+                <a href="#" class="hover:text-accent-gold transition-colors">Privacy Policy</a>
+                <a href="#" class="hover:text-accent-gold transition-colors">Terms of Service</a>
+                <a href="#" class="hover:text-accent-gold transition-colors">Support</a>
+                <a href="#" class="hover:text-accent-gold transition-colors">Twitter</a>
+                <a href="#" class="hover:text-accent-gold transition-colors">Discord</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Fixed Bottom Navigation Bar (< md) -->
+    <nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center py-2.5 px-4 bg-surface-deep/90 backdrop-blur-xl border-t border-navy-border md:hidden shadow-lg">
+        <a href="#giveaways" class="flex flex-col items-center justify-center text-on-surface-variant opacity-70 hover:opacity-100 active:scale-95 transition-all">
+            <span class="material-symbols-outlined text-2xl">redeem</span>
+            <span class="text-[10px] font-medium mt-0.5">Giveaways</span>
+        </a>
+        <a href="#features" class="flex flex-col items-center justify-center text-primary font-bold active:scale-95 transition-all">
+            <div class="bg-primary-blue/20 px-4 py-1 rounded-full mb-0.5 border border-primary-blue/40">
+                <span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">photo_camera</span>
+            </div>
+            <span class="text-[10px] tracking-wide">Outfit AI</span>
+        </a>
+        <a href="#chests" class="flex flex-col items-center justify-center text-on-surface-variant opacity-70 hover:opacity-100 active:scale-95 transition-all">
+            <span class="material-symbols-outlined text-2xl">inventory_2</span>
+            <span class="text-[10px] font-medium mt-0.5">Chests</span>
+        </a>
+    </nav>
+
+    <!-- Spacer for Mobile Bottom Nav -->
+    <div class="h-20 md:hidden"></div>
+
+    <!-- Micro-Interactions JavaScript -->
+    <script>
+        // Toggle Mobile Navigation Drawer
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        if (menuBtn && mobileMenu) {
+            menuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+
+        // Toggle Language selector text
+        const langBtns = [document.getElementById('lang-btn'), document.getElementById('lang-btn-mobile')];
+        langBtns.forEach(btn => {
+            if (btn) {
+                btn.addEventListener('click', () => {
+                    const textSpan = btn.querySelector('span:nth-child(2)');
+                    if (textSpan) {
+                        textSpan.innerText = textSpan.innerText === 'English' ? 'Español' : 'English';
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
