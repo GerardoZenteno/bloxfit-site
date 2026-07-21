@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service | Bloxfit</title>
+    <!-- Tailwind CSS v3 CDN with Plugins -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-deep": "#0B0F1A",
+                        "surface-container": "#171f33",
+                        "surface-container-low": "#131b2e",
+                        "surface-container-lowest": "#060e20",
+                        "surface-container-high": "#222a3d",
+                        "surface-container-highest": "#2d3449",
+                        "surface-elevated": "#1E293B",
+                        "primary": "#abc7ff",
+                        "primary-blue": "#488ffb",
+                        "accent-gold": "#FACC15",
+                        "tertiary": "#4edea3",
+                        "navy-border": "#2C2D3F",
+                        "on-surface": "#dae2fd",
+                        "on-surface-variant": "#c1c6d5",
+                        "outline": "#8b919f",
+                    },
+                    fontFamily: {
+                        sans: ['Montserrat', 'Roboto', 'sans-serif'],
+                        display: ['Montserrat', 'sans-serif'],
+                        body: ['Roboto', 'sans-serif'],
+                    }
+                },
+            },
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Google Material Symbols -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <style>
+        .glass-panel {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(44, 45, 63, 0.6);
+        }
+    </style>
+</head>
+<body class="bg-surface-deep text-on-surface font-body selection:bg-primary selection:text-[#002f65] antialiased">
+
+    <!-- Top Navigation Bar -->
+    <nav class="sticky top-0 z-50 bg-surface-deep/85 backdrop-blur-md border-b border-navy-border shadow-sm">
+        <div class="max-w-7xl mx-auto px-6 h-16 flex justify-between items-center">
+            <!-- Brand Logo -->
+            <a href="index.html" class="font-display text-2xl font-bold tracking-tight text-primary hover:opacity-90 transition-opacity">
+                Bloxfit
+            </a>
+
+            <!-- Desktop Nav Menu -->
+            <div class="hidden md:flex items-center gap-8">
+                <a href="index.html#features" class="text-sm font-medium text-on-surface-variant hover:text-primary transition-colors">Features</a>
+                <a href="index.html#chests" class="text-sm font-medium text-on-surface-variant hover:text-primary transition-colors">Chests</a>
+                <a href="index.html#giveaways" class="text-sm font-medium text-on-surface-variant hover:text-primary transition-colors">Giveaways</a>
+                
+                <!-- Language Selector -->
+                <button id="lang-btn" class="flex items-center gap-1.5 text-xs font-medium text-on-surface-variant bg-surface-container rounded-full px-3 py-1.5 border border-navy-border hover:border-primary/50 transition-colors">
+                    <span class="material-symbols-outlined text-base">language</span>
+                    <span id="lang-text">English</span>
+                    <span class="material-symbols-outlined text-base">expand_more</span>
+                </button>
+
+                <!-- Download CTA -->
+                <a href="index.html#features" class="bg-primary-blue text-white font-bold text-xs px-5 py-2.5 rounded-xl hover:bg-blue-600 transition-all shadow-md shadow-primary-blue/20">
+                    Download
+                </a>
+            </div>
+
+            <!-- Mobile Hamburger Button -->
+            <button id="mobile-menu-btn" class="md:hidden text-on-surface-variant p-2 hover:text-white">
+                <span class="material-symbols-outlined text-2xl">menu</span>
+            </button>
+        </div>
+
+        <!-- Mobile Nav Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-surface-container border-b border-navy-border px-6 py-4 space-y-3">
+            <a href="index.html#features" class="block text-sm text-on-surface-variant hover:text-primary">Features</a>
+            <a href="index.html#chests" class="block text-sm text-on-surface-variant hover:text-primary">Chests</a>
+            <a href="index.html#giveaways" class="block text-sm text-on-surface-variant hover:text-primary">Giveaways</a>
+            <div class="pt-2 border-t border-navy-border/50 flex justify-between items-center">
+                <button id="lang-btn-mobile" class="flex items-center gap-1.5 text-xs text-on-surface-variant bg-surface-container-high px-3 py-1.5 rounded-full border border-navy-border">
+                    <span class="material-symbols-outlined text-base">language</span>
+                    <span>English</span>
+                </button>
+                <a href="index.html#features" class="bg-primary-blue text-white text-xs font-bold px-4 py-2 rounded-lg">Download</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Content Container -->
+    <main class="max-w-4xl mx-auto px-4 sm:px-6 py-10 lg:py-16">
+        <div class="glass-panel rounded-2xl p-6 sm:p-10 shadow-2xl border border-navy-border">
+            
+            <!-- Header section -->
+            <div class="border-b border-navy-border pb-6 mb-8">
+                <span class="text-xs font-semibold uppercase tracking-wider text-accent-gold bg-surface-container px-3 py-1 rounded-full border border-accent-gold/20 inline-block mb-3">Legal Documentation</span>
+                <h1 class="font-display text-3xl sm:text-4xl font-extrabold text-white tracking-tight">Terms of Service for Bloxfit</h1>
+                <p class="text-xs sm:text-sm text-outline mt-2 font-medium">Last Updated: July 21, 2026</p>
+            </div>
+
+            <!-- Introductory Body -->
+            <div class="space-y-4 text-on-surface-variant text-sm sm:text-base leading-relaxed">
+                <p>
+                    These Terms of Service ("<strong class="text-white">Terms</strong>") are a legal agreement between you ("<strong class="text-white">you</strong>" or "<strong class="text-white">User</strong>") and <strong class="text-white">Gerardo Zenteno Gaeta</strong> ("<strong class="text-white">we</strong>," "<strong class="text-white">us</strong>," "<strong class="text-white">our</strong>," or "<strong class="text-white">Developer</strong>"), the developer of the Bloxfit mobile application (the "<strong class="text-white">App</strong>" or "<strong class="text-white">Service</strong>").
+                </p>
+
+                <!-- Developer details card -->
+                <div class="bg-surface-container/80 border border-navy-border rounded-xl p-4 sm:p-5 my-5 text-sm space-y-1.5">
+                    <div class="flex items-center gap-2 text-white font-semibold">
+                        <span class="material-symbols-outlined text-primary text-lg">badge</span>
+                        <span>Developer: Gerardo Zenteno Gaeta</span>
+                    </div>
+                    <div class="flex items-center gap-2 text-on-surface-variant">
+                        <span class="material-symbols-outlined text-primary text-lg">location_on</span>
+                        <span>Address: Calle 7 sur #5931, Villa Encantada, Mexico</span>
+                    </div>
+                    <div class="flex items-center gap-2 text-on-surface-variant">
+                        <span class="material-symbols-outlined text-primary text-lg">mail</span>
+                        <span>Contact Email: <a href="mailto:zega.apps.dev@gmail.com" class="text-primary hover:underline">zega.apps.dev@gmail.com</a></span>
+                    </div>
+                </div>
+
+                <p>
+                    By downloading, installing, or using Bloxfit, you agree to be bound by these Terms. If you do not agree, do not use the App.
+                </p>
+            </div>
+
+            <!-- Divider -->
+            <hr class="border-navy-border my-8" />
+
+            <!-- Section 1 -->
+            <section class="space-y-4 mb-8">
+                <h2 class="font-display text-xl sm:text-2xl font-bold text-white flex items-center gap-2">
+                    <span class="text-primary font-mono text-lg">1.</span>
+                    <span>Eligibility</span>
+                </h2>
+                <p class="text-on-surface-variant text-sm sm:text-base leading-relaxed">
+                    Bloxfit does not currently restrict use based on age. However, if you are under the age of majority in your jurisdiction, you represent that you have your parent or legal guardian's permission to use the App and that they have reviewed these Terms and our <a href="privacypolicy.html" class="text-primary font-semibold hover:underline">Privacy Policy</a> with you.
+                </p>
+                <p class="text-on-surface-variant text-sm sm:text-base leading-relaxed">
+                    Certain features (such as the weekly giveaway) may be limited or void based on your location where prohibited by local law. See Section 8 for details.
+                </p>
+            </section>
+
+            <!-- Section 2 -->
+            <section class="space-y-4 mb-8">
+                <h2 class="font-display text-xl sm:text-2xl font-bold text-white flex items-center gap-2">
+                    <span class="text-primary font-mono text-lg">2.</span>
+                    <span>Description of the Service</span>
+                </h2>
+                <p class="text-on-surface-variant text-sm sm:text-base">Bloxfit is an entertainment application that allows users to:</p>
+                <ul class="list-disc list-inside space-y-2 text-on-surface-variant text-sm sm:text-base pl-1">
+                    <li>Register an account via email/password or Google Sign-In</li>
+                    <li>Upload a photo or screenshot of a Roblox outfit and receive an AI-generated analysis (via Google Gemini) identifying the outfit's items, including name, price, creator, thumbnail, and a direct link to the corresponding Roblox store page (via the Roblox API)</li>
+                    <li>Perform daily check-ins and open Chests to earn <strong class="text-white">Bloxcoins</strong>, an in-app virtual currency with <strong class="text-white">no real-world monetary value</strong></li>
+                    <li>Redeem Bloxcoins for tickets to a weekly Giveaway</li>
+                    <li>View and edit their profile (nickname, Roblox username, country, profile picture)</li>
+                    <li>Optionally purchase a one-time membership to remove advertising</li>
+                </ul>
+                <p class="text-xs sm:text-sm text-outline italic bg-surface-container/50 p-3 rounded-lg border border-navy-border/50">
+                    Bloxfit is <strong class="text-white font-normal">not affiliated with, endorsed by, or sponsored by Roblox Corporation</strong>, Google, or any of the brands whose gift cards may be offered as giveaway prizes. "Roblox" and all related trademarks, item names, and imagery are the property of Roblox Corporation.
+                </p>
+            </section>
+
+            <!-- Section 3 -->
+            <section class="space-y-4 mb-8">
+                <h2 class="font-display text-xl sm:text-2xl font-bold text-white flex items-center gap-2">
+                    <span class="text-primary font-mono text-lg">3.</span>
+                    <span>Account Registration</span>
+                </h2>
+                <ul class="list-disc list-inside space-y-2 text-on-surface-variant text-sm sm:text-base pl-1">
+                    <li>You must provide accurate information when creating your account (email and password, or via Google Sign-In).</li>
+                    <li>You are responsible for maintaining the confidentiality of your login credentials and for all activity under your account.</li>
+                    <li>You agree to notify us immediately at <a href="mailto:zega.apps.dev@gmail.com" class="text-primary hover:underline">zega.apps.dev@gmail.com</a> of any unauthorized use of your account.</li>
+                    <li>We reserve the right to suspend or terminate accounts that provide false information, violate these Terms, or engage in abusive behavior.</li>
+                </ul>
+            </section>
+
+            <!-- Section 4 -->
+            <section class="space-y-4 mb-8">
+                <h2 class="font-display text-xl sm:text-2xl font-bold text-white flex items-center gap-2">
+                    <span class="text-primary font-mono text-lg">4.</span>
+                    <span>Bloxcoins, Chests, and Virtual Currency</span>
+                </h2>
+                <ul class="list-disc list-inside space-y-2.5 text-on-surface-variant text-sm sm:text-base pl-1">
+                    <li><strong class="text-white">Bloxcoins</strong> are a virtual, in-app currency with no cash value and <strong class="text-white">cannot be purchased with real money, exchanged for cash, or transferred outside the App</strong>.</li>
+                    <li>Bloxcoins are earned exclusively through in-app activities: daily check-ins (with streak-based bonus rewards), and opening free or ad-based Chests.</li>
+                    <li>Chest rewards are randomized ("loot box" style). By using this feature, you acknowledge that rewards are awarded at random and are not guaranteed to be any specific amount.</li>
+                    <li>Some Chests require watching a rewarded advertisement (via Yodo1 Mas) before they can be opened.</li>
+                    <li>We reserve the right to adjust, rebalance, or modify Bloxcoin earning rates, chest odds, or reward structures at any time, at our sole discretion, without liability to you.</li>
+                    <li>Bloxcoins have no value outside the App and are forfeited if your account is terminated or if the App is discontinued.</li>
+                </ul>
+            </section>
+
+            <!-- Section 5 -->
+            <section class="space-y-4 mb-8">
+                <h2 class="font-display text-xl sm:text-2xl font-bold text-white flex items-center gap-2">
+                    <span class="text-primary font-mono text-lg">5.</span>
+                    <span>Advertising</span>
+                </h2>
+                <ul class="list-disc list-inside space-y-2 text-on-surface-variant text-sm sm:text-base pl-1">
+                    <li>Bloxfit is supported by advertising delivered through <strong class="text-white">Yodo1 Mas</strong>, including rewarded video ads (used to unlock Chests and additional AI outfit analyses) and banner ads on the Home, Chests, and Giveaways screens.</li>
+                    <li>Free users receive <strong class="text-white">3 free AI outfit analyses</strong>; from the 4th analysis onward, watching a rewarded ad is required for each additional analysis, unless you purchase the ad-removal membership.</li>
+                    <li>For users identified as under 13 years old, only non-personalized ads will be shown, consistent with our Privacy Policy.</li>
+                    <li>We are not responsible for the content of third-party advertisements displayed in the App.</li>
+                </ul>
+            </section>
+
+            <!-- Section 6 -->
+            <section class="space-y-4 mb-8">
+                <h2 class="font-display text-xl sm:text-2xl font-bold text-white flex items-center gap-2">
+                    <span class="text-primary font-mono text-lg">6.</span>
+                    <span>Ad-Removal Membership (Purchases)</span>
+                </h2>
+                <ul class="list-disc list-inside space-y-2.5 text-on-surface-variant text-sm sm:text-base pl-1">
+                    <li>Bloxfit offers an optional <strong class="text-white">one-time, non-recurring purchase</strong> that permanently removes all advertising from your account.</li>
+                    <li>Purchases are processed via <strong class="text-white">Google Play Billing</strong> (and, in the future, Apple's In-App Purchase system if the App becomes available on iOS). All billing, payment methods, and refund requests are governed by the applicable app store's policies (e.g., <a href="https://support.google.com/googleplay/answer/2479637" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">Google Play's refund policy</a>).</li>
+                    <li>This purchase is a digital good delivered immediately upon confirmation; as such, it may not be eligible for refund except as required by applicable law or app store policy.</li>
+                    <li>The ad-removal membership is tied to your account/device and is non-transferable.</li>
+                </ul>
+            </section>
+
+            <!-- Section 7 -->
+            <section class="space-y-4 mb-8">
+                <h2 class="font-display text-xl sm:text-2xl font-bold text-white flex items-center gap-2">
+                    <span class="text-primary font-mono text-lg">7.</span>
+                    <span>AI Outfit Detection Feature — Disclaimers</span>
+                </h2>
+                <ul class="list-disc list-inside space-y-2.5 text-on-surface-variant text-sm sm:text-base pl-1">
+                    <li>The outfit analysis feature uses Google's Gemini AI to interpret uploaded images and cross-references results with the Roblox API. <strong class="text-white">Results are provided "as is" and may be inaccurate, incomplete, or fail to correctly identify items.</strong></li>
+                    <li>We do not guarantee that pricing, availability, or creator information retrieved from the Roblox API is accurate or current, as this data is controlled by Roblox Corporation and may change at any time.</li>
+                    <li>You are solely responsible for the images you upload. You agree not to upload images that are illegal, infringing, offensive, or that you do not have the right to use.</li>
+                    <li>We do not store your uploaded images on our servers or retain any history of your analyses (see Privacy Policy, Section 3).</li>
+                </ul>
+            </section>
+
+            <!-- Section 8 -->
+            <section class="space-y-4 mb-8">
+                <h2 class="font-display text-xl sm:text-2xl font-bold text-white flex items-center gap-2">
+                    <span class="text-primary font-mono text-lg">8.</span>
+                    <span>Weekly Giveaway — Official Rules</span>
+                </h2>
+                
+                <div class="bg-primary-blue/10 border-l-4 border-primary-blue rounded-r-xl p-4 sm:p-5 text-on-surface-variant text-sm sm:text-base leading-relaxed mb-4">
+                    <strong class="text-white font-bold block mb-1">NO PURCHASE OR PAYMENT OF ANY KIND IS NECESSARY TO ENTER OR WIN.</strong>
+                    A purchase or payment will not increase your chances of winning. Bloxcoins used to obtain giveaway tickets can only be earned through free in-app activity and can never be purchased with real money.
+                </div>
+
+                <div class="space-y-4 pl-1 text-on-surface-variant text-sm sm:text-base">
+                    <div>
+                        <h3 class="font-display text-base font-bold text-primary">8.1 Sponsor</h3>
+                        <p class="mt-1">The Giveaway is sponsored by Gerardo Zenteno Gaeta (<a href="mailto:zega.apps.dev@gmail.com" class="text-primary hover:underline">zega.apps.dev@gmail.com</a>), developer of Bloxfit ("<strong class="text-white">Sponsor</strong>").</p>
+                    </div>
+
+                    <div>
+                        <h3 class="font-display text-base font-bold text-primary">8.2 Eligibility</h3>
+                        <p class="mt-1">Open to registered Bloxfit users, subject to eligibility requirements. <strong class="text-white">The Giveaway is void wherever prohibited or restricted by law.</strong> It is your responsibility to determine whether participation in sweepstakes/giveaways of this type is lawful in your country, state, or region. Employees, contractors, and immediate family members of the Sponsor are not eligible to participate.</p>
+                    </div>
+
+                    <div>
+                        <h3 class="font-display text-base font-bold text-primary">8.3 How to Enter</h3>
+                        <p class="mt-1">Users may redeem Bloxcoins earned through in-app activity (check-ins, chests) for Giveaway tickets, at a fixed rate of <strong class="text-white">1 Bloxcoin = 1 ticket</strong>. The more tickets a user holds, the greater their statistical chance of being selected, but no specific outcome is guaranteed.</p>
+                    </div>
+
+                    <div>
+                        <h3 class="font-display text-base font-bold text-primary">8.4 Drawing</h3>
+                        <p class="mt-1">A random drawing is conducted <strong class="text-white">every Sunday at 23:00 (hora de México / Mexico time, or the timezone specified in-app)</strong> among all valid ticket entries submitted during that week's period. Odds of winning depend on the total number of tickets entered by all eligible participants during that period.</p>
+                    </div>
+
+                    <div>
+                        <h3 class="font-display text-base font-bold text-primary">8.5 Prize</h3>
+                        <p class="mt-1">One winner is selected per weekly drawing and receives a <strong class="text-white">digital Google Play Store gift card</strong>, with a value that may range approximately from <strong class="text-white">USD $5 to USD $100</strong>, at Sponsor's discretion, depending on App advertising revenue and/or sponsorships available at that time. The exact prize value for each drawing will be communicated to the winner and/or disclosed in-app. Prizes are non-transferable and no cash alternative will be offered, except at Sponsor's sole discretion.</p>
+                    </div>
+
+                    <div>
+                        <h3 class="font-display text-base font-bold text-primary">8.6 Winner Notification</h3>
+                        <p class="mt-1">The winner will be notified via the email address associated with their account. The winner may be required to respond within a reasonable time (e.g., 7 days) to claim their prize; unclaimed prizes may be forfeited and/or awarded to an alternate winner at Sponsor's discretion.</p>
+                    </div>
+
+                    <div>
+                        <h3 class="font-display text-base font-bold text-primary">8.7 Taxes and Legal Compliance</h3>
+                        <p class="mt-1">Winners are solely responsible for any applicable taxes, fees, or legal obligations arising from their receipt of a prize under the laws of their jurisdiction. Sponsor is not responsible for verifying or withholding taxes on prizes.</p>
+                    </div>
+
+                    <div>
+                        <h3 class="font-display text-base font-bold text-primary">8.8 General Conditions</h3>
+                        <p class="mt-1">Sponsor reserves the right to cancel, suspend, or modify the Giveaway (including prize values, frequency, or mechanics) at any time, for any reason, including suspected fraud, technical failure, or legal/regulatory concerns, without liability. Sponsor reserves the right to disqualify any user suspected of fraudulent activity (e.g., use of multiple accounts, bots, or exploits to gain tickets).</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 9 -->
+            <section class="space-y-4 mb-8">
+                <h2 class="font-display text-xl sm:text-2xl font-bold text-white flex items-center gap-2">
+                    <span class="text-primary font-mono text-lg">9.</span>
+                    <span>Acceptable Use</span>
+                </h2>
+                <p class="text-on-surface-variant text-sm sm:text-base">You agree not to:</p>
+                <ul class="list-disc list-inside space-y-2 text-on-surface-variant text-sm sm:text-base pl-1">
+                    <li>Use bots, scripts, emulators, or other automated means to farm Bloxcoins, tickets, or ad rewards</li>
+                    <li>Attempt to reverse-engineer, hack, or exploit the App or its backend systems</li>
+                    <li>Upload content that is illegal, obscene, infringing, or harmful</li>
+                    <li>Impersonate another person or misrepresent your affiliation with any person or entity</li>
+                    <li>Use the App in any way that violates Roblox Corporation's Terms of Use, Google's Play Store policies, or applicable law</li>
+                </ul>
+                <p class="text-xs sm:text-sm text-on-surface-variant">
+                    Violation of this section may result in suspension or termination of your account, forfeiture of Bloxcoins/tickets, and disqualification from the Giveaway.
+                </p>
+            </section>
+
+            <!-- Section 10 -->
+            <section class="space-y-4 mb-8">
+                <h2 class="font-display text-xl sm:text-2xl font-bold text-white flex items-center gap-2">
+                    <span class="text-primary font-mono text-lg">10.</span>
+                    <span>Intellectual Property</span>
+                </h2>
+                <ul class="list-disc list-inside space-y-2 text-on-surface-variant text-sm sm:text-base pl-1">
+                    <li>The Bloxfit App, its design, branding, and original content are the property of Gerardo Zenteno Gaeta.</li>
+                    <li>Roblox-related data, trademarks, and imagery displayed within the App (item names, thumbnails, pricing) are the property of Roblox Corporation and are displayed pursuant to the Roblox API for informational purposes only.</li>
+                    <li>Bloxfit is not affiliated with Roblox Corporation, Google, or Yodo1, and no such affiliation should be implied.</li>
+                </ul>
+            </section>
+
+            <!-- Section 11 -->
+            <section class="space-y-4 mb-8">
+                <h2 class="font-display text-xl sm:text-2xl font-bold text-white flex items-center gap-2">
+                    <span class="text-primary font-mono text-lg">11.</span>
+                    <span>Third-Party Services</span>
+                </h2>
+                <p class="text-on-surface-variant text-sm sm:text-base leading-relaxed">
+                    The App integrates with third-party services, including Firebase (Google), Google Sign-In, Google Gemini API, the Roblox API, Yodo1 Mas, and Google Play Billing. Your use of these integrated features is also subject to the respective third party's own terms of service. We are not responsible for the availability, accuracy, or practices of these third-party services.
+                </p>
+            </section>
+
+            <!-- Section 12 -->
+            <section class="space-y-4 mb-8">
+                <h2 class="font-display text-xl sm:text-2xl font-bold text-white flex items-center gap-2">
+                    <span class="text-primary font-mono text-lg">12.</span>
+                    <span>Disclaimers</span>
+                </h2>
+                <p class="text-on-surface-variant text-xs sm:text-sm leading-relaxed uppercase tracking-wide bg-surface-container/60 p-4 rounded-xl border border-navy-border font-medium">
+                    THE APP AND ALL FEATURES (INCLUDING THE AI OUTFIT ANALYSIS, CHESTS, AND GIVEAWAY) ARE PROVIDED "AS IS" AND "AS AVAILABLE," WITHOUT WARRANTIES OF ANY KIND, WHETHER EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, OR NON-INFRINGEMENT. WE DO NOT WARRANT THAT THE APP WILL BE UNINTERRUPTED, ERROR-FREE, OR THAT AI-GENERATED OUTFIT ANALYSIS RESULTS WILL BE ACCURATE.
+                </p>
+            </section>
+
+            <!-- Section 13 -->
+            <section class="space-y-4 mb-8">
+                <h2 class="font-display text-xl sm:text-2xl font-bold text-white flex items-center gap-2">
+                    <span class="text-primary font-mono text-lg">13.</span>
+                    <span>Limitation of Liability</span>
+                </h2>
+                <p class="text-on-surface-variant text-xs sm:text-sm leading-relaxed uppercase tracking-wide bg-surface-container/60 p-4 rounded-xl border border-navy-border font-medium">
+                    TO THE MAXIMUM EXTENT PERMITTED BY LAW, GERARDO ZENTENO GAETA SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, OR ANY LOSS OF DATA, REVENUE, OR VIRTUAL CURRENCY, ARISING OUT OF OR RELATED TO YOUR USE OF THE APP, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. OUR TOTAL LIABILITY FOR ANY CLAIM ARISING FROM THESE TERMS OR THE APP SHALL NOT EXCEED THE AMOUNT YOU PAID US, IF ANY, IN THE 12 MONTHS PRECEDING THE CLAIM.
+                </p>
+            </section>
+
+            <!-- Section 14 -->
+            <section class="space-y-4 mb-8">
+                <h2 class="font-display text-xl sm:text-2xl font-bold text-white flex items-center gap-2">
+                    <span class="text-primary font-mono text-lg">14.</span>
+                    <span>Termination</span>
+                </h2>
+                <p class="text-on-surface-variant text-sm sm:text-base leading-relaxed">
+                    We may suspend or terminate your access to the App at any time, with or without notice, for conduct that we believe violates these Terms or is harmful to other users, us, or third parties. Upon termination, your right to use the App ceases immediately, and any accumulated Bloxcoins, tickets, or pending giveaway entries may be forfeited.
+                </p>
+                <p class="text-on-surface-variant text-sm sm:text-base leading-relaxed">
+                    You may stop using the App and delete your account at any time.
+                </p>
+            </section>
+
+            <!-- Section 15 -->
+            <section class="space-y-4 mb-8">
+                <h2 class="font-display text-xl sm:text-2xl font-bold text-white flex items-center gap-2">
+                    <span class="text-primary font-mono text-lg">15.</span>
+                    <span>Changes to the App and Terms</span>
+                </h2>
+                <p class="text-on-surface-variant text-sm sm:text-base leading-relaxed">
+                    We may modify, suspend, or discontinue the App (or any feature, including the Giveaway) at any time. We may update these Terms from time to time; continued use of the App after changes take effect constitutes acceptance of the revised Terms. Material changes will be reflected by updating the "Last Updated" date above.
+                </p>
+            </section>
+
+            <!-- Section 16 -->
+            <section class="space-y-4 mb-8">
+                <h2 class="font-display text-xl sm:text-2xl font-bold text-white flex items-center gap-2">
+                    <span class="text-primary font-mono text-lg">16.</span>
+                    <span>Governing Law</span>
+                </h2>
+                <p class="text-on-surface-variant text-sm sm:text-base leading-relaxed">
+                    These Terms shall be governed by the laws of Mexico, without regard to conflict-of-law principles, except where mandatory consumer protection laws of your country of residence provide otherwise.
+                </p>
+            </section>
+
+            <!-- Section 17 -->
+            <section class="space-y-4">
+                <h2 class="font-display text-xl sm:text-2xl font-bold text-white flex items-center gap-2">
+                    <span class="text-primary font-mono text-lg">17.</span>
+                    <span>Contact Us</span>
+                </h2>
+                <p class="text-on-surface-variant text-sm sm:text-base">
+                    For questions about these Terms, please contact:
+                </p>
+                <div class="bg-surface-container/80 border border-navy-border rounded-xl p-5 text-sm space-y-1">
+                    <p class="text-white font-bold text-base">Gerardo Zenteno Gaeta</p>
+                    <p class="text-on-surface-variant">Email: <a href="mailto:zega.apps.dev@gmail.com" class="text-primary hover:underline">zega.apps.dev@gmail.com</a></p>
+                    <p class="text-on-surface-variant">Address: Calle 7 sur #5931, Villa Encantada, Mexico</p>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-surface-container-lowest border-t border-navy-border py-12 mt-12">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="space-y-2 text-center md:text-left">
+                <div class="font-display text-2xl font-bold text-primary">Bloxfit</div>
+                <p class="text-xs text-on-surface-variant">
+                    © 2024 Bloxfit. Not affiliated with Roblox Corporation.
+                </p>
+            </div>
+            
+            <div class="flex flex-wrap justify-center gap-6 text-xs text-on-surface-variant">
+                <a href="privacypolicy.html" class="hover:text-accent-gold transition-colors">Privacy Policy</a>
+                <a href="terms.html" class="text-accent-gold font-semibold transition-colors">Terms of Service</a>
+                <a href="mailto:zega.apps.dev@gmail.com" class="hover:text-accent-gold transition-colors">Support</a>
+                <a href="#" class="hover:text-accent-gold transition-colors">Twitter</a>
+                <a href="#" class="hover:text-accent-gold transition-colors">Discord</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Fixed Bottom Navigation Bar (< md) -->
+    <nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center py-2.5 px-4 bg-surface-deep/90 backdrop-blur-xl border-t border-navy-border md:hidden shadow-lg">
+        <a href="index.html#giveaways" class="flex flex-col items-center justify-center text-on-surface-variant opacity-70 hover:opacity-100 active:scale-95 transition-all">
+            <span class="material-symbols-outlined text-2xl">redeem</span>
+            <span class="text-[10px] font-medium mt-0.5">Giveaways</span>
+        </a>
+        <a href="index.html#features" class="flex flex-col items-center justify-center text-primary font-bold active:scale-95 transition-all">
+            <div class="bg-primary-blue/20 px-4 py-1 rounded-full mb-0.5 border border-primary-blue/40">
+                <span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">photo_camera</span>
+            </div>
+            <span class="text-[10px] tracking-wide">Outfit AI</span>
+        </a>
+        <a href="index.html#chests" class="flex flex-col items-center justify-center text-on-surface-variant opacity-70 hover:opacity-100 active:scale-95 transition-all">
+            <span class="material-symbols-outlined text-2xl">inventory_2</span>
+            <span class="text-[10px] font-medium mt-0.5">Chests</span>
+        </a>
+    </nav>
+
+    <!-- Spacer for Mobile Bottom Nav -->
+    <div class="h-20 md:hidden"></div>
+
+    <!-- Micro-Interactions JavaScript -->
+    <script>
+        // Toggle Mobile Navigation Drawer
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        if (menuBtn && mobileMenu) {
+            menuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+
+        // Toggle Language selector text
+        const langBtns = [document.getElementById('lang-btn'), document.getElementById('lang-btn-mobile')];
+        langBtns.forEach(btn => {
+            if (btn) {
+                btn.addEventListener('click', () => {
+                    const textSpan = btn.querySelector('span:nth-child(2)');
+                    if (textSpan) {
+                        textSpan.innerText = textSpan.innerText === 'English' ? 'Español' : 'English';
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
