@@ -40,10 +40,15 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Roboto:wght@400;500;700&family=Grandstander:wght@900&display=swap" rel="stylesheet">
     <!-- Google Material Symbols -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <style>
+        .font-grandstander {
+            font-family: 'Grandstander', sans-serif;
+            font-weight: 900;
+            text-transform: uppercase;
+        }
         .glass-panel {
             background: rgba(30, 41, 59, 0.7);
             backdrop-filter: blur(12px);
@@ -58,7 +63,7 @@
     <nav class="sticky top-0 z-50 bg-surface-deep/85 backdrop-blur-md border-b border-navy-border shadow-sm">
         <div class="max-w-7xl mx-auto px-6 h-16 flex justify-between items-center">
             <!-- Brand Logo -->
-            <a href="https://bloxfit.app/" class="font-display text-2xl font-bold tracking-tight text-primary hover:opacity-90 transition-opacity">
+            <a href="https://bloxfit.app/" class="font-grandstander text-2xl tracking-tight text-white hover:opacity-90 transition-opacity">
                 Bloxfit
             </a>
 
@@ -69,7 +74,7 @@
                 <a href="https://bloxfit.app/#boost" class="text-sm font-medium text-on-surface-variant hover:text-primary transition-colors">Boost</a>
                 
                 <!-- Download CTA -->
-                <a href="https://bloxfit.app/#download" class="bg-primary-blue text-white font-bold text-xs px-5 py-2.5 rounded-xl hover:bg-blue-600 transition-all shadow-md shadow-primary-blue/20">
+                <a href="https://bloxfit.app/#download" class="font-grandstander bg-primary-blue text-white text-xs px-5 py-2.5 rounded-xl hover:bg-blue-600 transition-all shadow-md shadow-primary-blue/20">
                     Download
                 </a>
             </div>
@@ -85,7 +90,7 @@
             <a href="https://bloxfit.app/#features" class="block text-sm text-on-surface-variant hover:text-primary">Features</a>
             <a href="https://bloxfit.app/#chests" class="block text-sm text-on-surface-variant hover:text-primary">Chests</a>
             <a href="https://bloxfit.app/#boost" class="block text-sm text-on-surface-variant hover:text-primary">Boost</a>
-            <a href="https://bloxfit.app/#download" class="block text-center bg-primary-blue text-white font-bold text-xs px-4 py-2 rounded-lg">Download</a>
+            <a href="https://bloxfit.app/#download" class="font-grandstander block text-center bg-primary-blue text-white text-xs px-4 py-2 rounded-lg">Download</a>
         </div>
     </nav>
 
@@ -94,7 +99,7 @@
         <!-- Page Header -->
         <div class="border-b border-navy-border pb-8 mb-10">
             <span class="text-xs font-bold uppercase tracking-widest text-primary">LEGAL DOCUMENTATION</span>
-            <h1 class="font-display text-4xl sm:text-5xl font-extrabold text-white mt-2 mb-4">Privacy Policy</h1>
+            <h1 class="font-grandstander text-4xl sm:text-5xl text-white mt-2 mb-4">Privacy Policy</h1>
             <p class="text-sm text-on-surface-variant">
                 Last Updated: <span class="text-white font-medium">July 22, 2026</span>
             </p>
@@ -246,11 +251,6 @@
                 <p class="text-xs italic text-on-surface-variant pt-2">
                     Bloxfit is an independent application and is not affiliated with, endorsed by, or sponsored by Roblox Corporation or Google/Gemini. All Roblox trademarks, item data, and imagery obtained through the Roblox API remain the property of Roblox Corporation and/or the relevant content creators.
                 </p>
-                <!-- 3.2 Ephemeral Processing & Image Uploads (Children's Privacy) -->
-                <div class="space-y-3">
-                    <h3 class="font-display text-base font-semibold text-white">3.1 Ephemeral Processing & Image Uploads (Children's Privacy)</h3>
-                    <p>Bloxfit utilizes artificial intelligence to analyze video game avatars and outfit images. To protect our users, especially minors, we employ an ephemeral processing architecture. When a user uploads an image to the AI Scan feature, the image is transmitted securely solely for real-time analysis. Immediately upon completion of the analysis (which takes seconds), the image is permanently and automatically deleted from our servers. Bloxfit does not store, host, or use uploaded images to train AI models. Furthermore, our AI is programmed to actively reject and immediately discard any image containing a recognizable real human face to comply with COPPA and global child privacy regulations.</p>
-                </div>
             </section>
 
             <!-- 4. How We Use Your Information -->
@@ -462,7 +462,7 @@
     <footer class="bg-surface-container-lowest border-t border-navy-border py-12 mt-12">
         <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
             <div class="space-y-2 text-center md:text-left">
-                <a href="https://bloxfit.app/" class="font-display text-2xl font-bold text-primary hover:opacity-90 transition-opacity">Bloxfit</a>
+                <a href="https://bloxfit.app/" class="font-grandstander text-2xl text-white hover:opacity-90 transition-opacity">Bloxfit</a>
                 <p class="text-xs text-on-surface-variant">
                     © 2024 Bloxfit. Not affiliated with Roblox Corporation.
                 </p>
@@ -472,7 +472,7 @@
                 <a href="https://bloxfit.app/privacypolicy" class="text-accent-gold font-semibold transition-colors">Privacy Policy</a>
                 <a href="https://bloxfit.app/terms.html" class="hover:text-accent-gold transition-colors">Terms of Service</a>
                 <a href="mailto:zega.apps.dev@gmail.com" class="hover:text-accent-gold transition-colors">Support</a>
-                <a href="#" class="hover:text-accent-gold transition-colors">Tiktok</a>
+                <a href="https://www.tiktok.com/@bloxfit.app" class="hover:text-accent-gold transition-colors" target="_blank" rel="noopener noreferrer">Tiktok</a>
                 <a href="#" class="hover:text-accent-gold transition-colors">Discord</a>
             </div>
         </div>
